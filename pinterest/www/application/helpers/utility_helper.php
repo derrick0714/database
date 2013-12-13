@@ -2,7 +2,7 @@
 
 define("CSS", base_url().'assets/css');
 define("JS", base_url().'assets/js');
-define("IMGS", base_url().'assets/imgs');
+define("IMG", base_url().'assets/img');
 define("ICO", base_url().'assets/ico');
 
 function load_template( $p, $name, $data= null){
@@ -11,5 +11,6 @@ function load_template( $p, $name, $data= null){
 	$p->load->view( $name, $data);
 	$p->load->view('footer', $data);
 }
+
 
 ?>

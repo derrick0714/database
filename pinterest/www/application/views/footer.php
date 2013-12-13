@@ -1,8 +1,7 @@
-	
-</div>
+
 <div id="footer">
 	<div class="footer_container container">
-		<p class="text-muted credit"> <center>Powerd by <a href="http://www.dengxu.me">Xu Deng</a> @11/12/2013 </center></p>
+		<p class="text-muted credit"> <center>Powerd by <a href="http://www.dengxu.me">Xu Deng</a> @ 12/2013 </center></p>
 	</div>
 </div>
 
