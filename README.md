@@ -1,4 +1,4 @@
 database
 ========
 
-database prokect
+database project
