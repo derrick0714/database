@@ -60,7 +60,7 @@ class Welcome extends CI_Controller {
 		$key = $this->input->post('keyword');
 		//
 		$sql1="select Picture.pdesc, Picture.pid, Board.bid, Board.bname, user.uid, user.first_name, Picture.store_url ";
-		$sql = $sql1." from  Pin, Picture, user, Board where  Pin.pid = Picture.pid and Board.uid =user.uid and Pin.bid = Board.bid and Picture.tags like '%".$key."%' group by Pin.pid, Pin.bid order by Pin.timestamp desc";
+		$sql = $sql1." from  Pin, Picture, user, Board where  Pin.pid = Picture.pid and Board.uid =user.uid and Pin.bid = Board.bid and (Picture.tags like '%".$key."%' or Picture.pdesc like '%".$key."%' ) group by Pin.pid, Pin.bid order by Pin.timestamp desc";
 
 		$data['result'] = $this->db->query($sql);
 

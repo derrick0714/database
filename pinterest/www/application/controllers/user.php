@@ -19,6 +19,9 @@ class User extends CI_Controller {
 			$data['self'] = false;
 		}
 
+		$sql = "select * from FriendShip where follower_id = ".$GLOBALS['USER']['id']." and status = '1'";
+		$friends_result = $this->db->query($sql);
+		$data['friend_num'] = $friends_result->num_rows();
 
 		$sql = "select * from Board where uid = ".$uid." order by timestamp desc";
 		$board_result = $this->db->query($sql);

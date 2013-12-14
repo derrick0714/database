@@ -49,14 +49,14 @@
 					<li><a href="#"><?=$board_query->num_rows()?> Boards</a></li>
 					<li><a href="#"><?=$pins?> Pins</a></li>
 					<li><a href="#"><?=$likes?> Likes</a></li>
-					<li><a href="#">0 Friends</a></li>
+					<li><a href="<?=base_url()."firend/show/1"?>"><?=$friend_num?> Friends</a></li>
 				</ul>
 				<?php 
 					if($self == true)
 					{
 				?>
 					<ul class="nav navbar-nav navbar-right">
-					<li ><a href="#" >Edit Profile</a></li>
+					<li ><a href="#" data-toggle="modal" data-target="#modify_user" onclick="modifyuser()" >Edit Profile</a></li>
 					<li ><a href="#" data-toggle="modal" data-target="#create_board">Add Board</a></li>
 					</ul>
 				<?php
@@ -138,6 +138,11 @@
 
 	<!-- Modal -->
     <div class="modal fade" id="modify_board" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      
+    </div><!-- /.modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="modify_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       
     </div><!-- /.modal -->
 

@@ -25,6 +25,7 @@
 		<div class="panel panel-default">
 			<!-- Default panel contents -->
 			<div class="panel-heading">Comment</div>
+			
 			<div class="panel-body">
 			<!-- List group -->
 			<ul class="list-group">
@@ -43,14 +44,26 @@
 	<div class="row col-md-6 col-md-offset-3">
 		<div class="panel panel-default">
 			<div class="panel-heading">
+			<?php
+			if(!$public && !$friend)
+			{
+			?>
+				<h3 class="panel-title">This is in a priavte board, you can't commnet</h3>
+			<?php
+			}else{
+			?>
 				<h3 class="panel-title">Say something:</h3>
+			<?php
+			}
+			?>
+				
 			</div>
-			<form role="form" action="<?=base_url()."comment/add/".$result['pid']."/".$bid?>" method="post">
+			<form role="form" action="<?=base_url()."comment/add/".$result['pid']."/".$bid?>" method="post" >
 				<div class="panel-body">
 				<textarea class="form-control" rows="4" name=commnet></textarea>
 				</div>
 				<div class="panel-body">
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default" <?php if(!$public && !$friend) echo "disabled";?>>Submit</button>
 				</div>
 			</form>
 		</div>
